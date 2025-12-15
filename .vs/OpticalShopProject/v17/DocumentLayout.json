@@ -1,32 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\Supplier.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|solutionrelative:OpticalShopProject\\Supplier.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\Order.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|solutionrelative:OpticalShopProject\\Order.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\OpticalSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|solutionrelative:OpticalShopProject\\OpticalSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\OpticalMaterial.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|solutionrelative:OpticalShopProject\\OpticalMaterial.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\InputHelper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|solutionrelative:OpticalShopProject\\InputHelper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\FileManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{863933D9-5582-407B-A1EA-920C68DCFFEB}|OpticalShopProject\\OpticalShopProject.vcxproj|solutionrelative:OpticalShopProject\\FileManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,84 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Supplier.cpp",
-              "DocumentMoniker": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\Supplier.cpp",
-              "RelativeDocumentMoniker": "OpticalShopProject\\Supplier.cpp",
-              "ToolTip": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\Supplier.cpp",
-              "RelativeToolTip": "OpticalShopProject\\Supplier.cpp",
-              "ViewState": "AgIAAJ0AAAAAAAAAAADwv6gAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-15T16:02:51.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Order.cpp",
-              "DocumentMoniker": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\Order.cpp",
-              "RelativeDocumentMoniker": "OpticalShopProject\\Order.cpp",
-              "ToolTip": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\Order.cpp",
-              "RelativeToolTip": "OpticalShopProject\\Order.cpp",
-              "ViewState": "AgIAAC0AAAAAAAAAAADwvzwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-15T16:02:32.887Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InputHelper.cpp",
-              "DocumentMoniker": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\InputHelper.cpp",
-              "RelativeDocumentMoniker": "OpticalShopProject\\InputHelper.cpp",
-              "ToolTip": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\InputHelper.cpp",
-              "RelativeToolTip": "OpticalShopProject\\InputHelper.cpp",
-              "ViewState": "AgIAAAQAAAAAAAAAAADwvxgAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-15T16:02:09.301Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FileManager.cpp",
-              "DocumentMoniker": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\FileManager.cpp",
-              "RelativeDocumentMoniker": "OpticalShopProject\\FileManager.cpp",
-              "ToolTip": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\FileManager.cpp",
-              "RelativeToolTip": "OpticalShopProject\\FileManager.cpp",
-              "ViewState": "AgIAAI0AAAAAAAAAAADwv7EAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-15T15:49:36.852Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OpticalSystem.cpp",
-              "DocumentMoniker": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\OpticalSystem.cpp",
-              "RelativeDocumentMoniker": "OpticalShopProject\\OpticalSystem.cpp",
-              "ToolTip": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\OpticalSystem.cpp",
-              "RelativeToolTip": "OpticalShopProject\\OpticalSystem.cpp",
-              "ViewState": "AgIAANUCAAAAAAAAAADwv+oCAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-15T15:43:35.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OpticalMaterial.cpp",
-              "DocumentMoniker": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\OpticalMaterial.cpp",
-              "RelativeDocumentMoniker": "OpticalShopProject\\OpticalMaterial.cpp",
-              "ToolTip": "D:\\SoftUni\\GitHub\\OpticalSystem_CourseProject_TU\\OpticalShopProject\\OpticalMaterial.cpp",
-              "RelativeToolTip": "OpticalShopProject\\OpticalMaterial.cpp",
-              "ViewState": "AgIAAHoAAAAAAAAAAADwv4kAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-15T15:42:20.617Z",
-              "EditorCaption": ""
             }
           ]
         }

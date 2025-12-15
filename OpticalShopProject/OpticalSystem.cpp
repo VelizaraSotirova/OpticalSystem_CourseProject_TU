@@ -103,7 +103,7 @@ void OpticalSystem::loadData() {
     if (fileManager.loadFromFile(loadedSuppliers, format)) {
         displayLoadedData(loadedSuppliers, filename);
 
-        // Запитване дали да зареди в системата
+        // Asking whether to load into the system
         char confirm;
         cout << "\nDo you want to load this data into the system? (y/n): ";
         cin >> confirm;
@@ -181,7 +181,7 @@ void OpticalSystem::displayLoadedData(const vector<Supplier>& suppliers, const s
         double supplierValue = suppliers[i].getTotalMaterialValue();
         totalValue += supplierValue;
 
-        // Показване на материалите
+        // Show materials
         if (matCount > 0) {
             const auto& materials = suppliers[i].getMaterials();
             for (size_t j = 0; j < materials.size() && j < 3; j++) {
@@ -228,23 +228,23 @@ void OpticalSystem::addSupplier() {
 
     string bulstat, name, city, phone;
 
-    // Валидация на VAT номер
+    // VAT validation
     while (true) {
         bulstat = InputHelper::getStringInput("Enter VAT number: ");
 
-        // Проверка за празен вход
+        // Check for empty input
         if (bulstat.empty()) {
             cout << "VAT number cannot be empty! Please try again.\n";
             continue;
         }
 
-        // Проверка за дължина
+        // Length check
         if (bulstat.length() < 9 || bulstat.length() > 13) {
             cout << "Invalid VAT number! Please enter a number with length 9-13 symbols.\n";
             continue;
         }
 
-        // Проверка дали всички символи са цифри
+		// Digit check
         bool allDigits = true;
         for (char c : bulstat) {
             if (!isdigit(static_cast<unsigned char>(c))) {
@@ -258,14 +258,14 @@ void OpticalSystem::addSupplier() {
             continue;
         }
 
-        break; // Успешна валидация
+		break; // Successful validation
     }
 
-    // Въвеждане на име
+	// Name input validation
     while (true) {
         name = InputHelper::getStringInput("Enter company name: ");
 
-        // Премахваме водещи и завършващи whitespace символи
+		// Remove leading and trailing spaces
         size_t start = name.find_first_not_of(" \t\n\r\f\v");
         size_t end = name.find_last_not_of(" \t\n\r\f\v");
 
@@ -276,25 +276,24 @@ void OpticalSystem::addSupplier() {
 
         name = name.substr(start, end - start + 1);
 
-        // Проверка за минимална дължина
+		// Min length check
         if (name.length() < 3) {
             cout << "Company name must be at least 3 characters long! Please try again.\n";
             continue;
         }
 
-        // Проверка за разрешени символи: букви, цифри, интервали и тире
+        // Check for allowed characters: letters, numbers, spaces, and dashes
         bool validName = true;
         bool hasLetterOrDigit = false;
 
         for (size_t i = 0; i < name.length(); i++) {
             char c = name[i];
 
-            // Проверка за разрешени символи
             if (std::isalnum(static_cast<unsigned char>(c))) {
                 hasLetterOrDigit = true;
             }
             else if (c == ' ') {
-                // Интервалите са позволени, но проверяваме за последователни интервали
+                // Intervals are allowed, but not consecutive intervals
                 if (i > 0 && name[i - 1] == ' ') {
                     cout << "Company name cannot have consecutive spaces! Please try again.\n";
                     validName = false;
@@ -302,21 +301,18 @@ void OpticalSystem::addSupplier() {
                 }
             }
             else if (c == '-') {
-                // Тиретата са позволени
-                // Можем да добавим допълнителни проверки за тирета ако искаме:
-                // - Не позволяваме тире в началото или края
+				// Dashes are allowed with restrictions:
+				// Not in the beginning or end, not consecutive, not next to spaces
                 if (i == 0 || i == name.length() - 1) {
                     cout << "Company name cannot start or end with a dash (-)! Please try again.\n";
                     validName = false;
                     break;
                 }
-                // - Не позволяваме последователни тирета
                 if (i > 0 && name[i - 1] == '-') {
                     cout << "Company name cannot have consecutive dashes (--)! Please try again.\n";
                     validName = false;
                     break;
                 }
-                // - Не позволяваме тире след интервал или интервал преди тире
                 if (i > 0 && name[i - 1] == ' ') {
                     cout << "Company name cannot have space before dash! Please try again.\n";
                     validName = false;
@@ -351,14 +347,14 @@ void OpticalSystem::addSupplier() {
                 }
             }
             else {
-                // Всички други символи са забранени
+				// Anything else is invalid
                 validName = false;
                 break;
             }
         }
 
         if (!validName) {
-            // Съобщението вече е изписано в специфичните проверки
+			// The message is in the specific checks above
             continue;
         }
 
@@ -367,32 +363,31 @@ void OpticalSystem::addSupplier() {
             continue;
         }
 
-        // Допълнителна проверка: не трябва да започва или завършва с интервал
         if (name.front() == ' ' || name.back() == ' ') {
             cout << "Company name cannot start or end with a space! Please try again.\n";
             continue;
         }
 
-        break; // Успешна валидация
+		break; // Successful validation
     }
 
-    // Валидация на град
+	// City validation
     while (true) {
         city = InputHelper::getStringInput("Enter city: ");
 
-        // Проверка за празен вход
+        
         if (city.empty()) {
             cout << "City cannot be empty! Please try again.\n";
             continue;
         }
 
-        // Проверка за минимална дължина
+        
         if (city.length() < 3) {
             cout << "City name must be at least 3 characters long! Please try again.\n";
             continue;
         }
 
-        // Проверка дали има само букви, интервали и тирета
+		// Only letters and spaces allowed
         bool validCity = true;
         bool hasLetter = false;
 
@@ -401,7 +396,6 @@ void OpticalSystem::addSupplier() {
                 hasLetter = true;
             }
             else if (c != ' ') {
-                // Допускаме интервали
                 validCity = false;
                 break;
             }
@@ -417,16 +411,16 @@ void OpticalSystem::addSupplier() {
             continue;
         }
 
-        // По желание: Проверка дали започва с главна буква
+        
         if (!isupper(static_cast<unsigned char>(city[0]))) {
             cout << "Note: City names usually start with a capital letter.\n";
-            // Не го правим задължително, само предупреждение
+			// Warning only, not an error
         }
 
-        break; // Успешна валидация
+		break; // Successful validation
     }
 
-    // Валидация на телефон
+	// Phone number validation
     while (true) {
         phone = InputHelper::getStringInput("Enter phone number: ");
 
@@ -436,7 +430,7 @@ void OpticalSystem::addSupplier() {
             continue;
         }
 
-        // Проверка за валидни символи и брой цифри
+		// Check for valid characters and count digits
         bool validChars = true;
         int digitCount = 0;
 
@@ -460,7 +454,7 @@ void OpticalSystem::addSupplier() {
             continue;
         }
 
-        break; // Успешна валидация
+		break; // Successful validation
     }
 
     try {
@@ -507,12 +501,12 @@ void OpticalSystem::addMaterialToSupplier() {
 
     std::cout << "\n=== ADD MATERIAL ===\n";
 
-    // Валидация на тип (само букви, поне 3 символа)
+	// Type validation
     std::string type;
     while (true) {
         type = InputHelper::getStringInput("Enter material type: ");
 
-        // Премахваме водещи и завършващи интервали
+		// Removing leading and trailing spaces
         size_t start = type.find_first_not_of(" \t\n\r");
         size_t end = type.find_last_not_of(" \t\n\r");
 
@@ -520,19 +514,19 @@ void OpticalSystem::addMaterialToSupplier() {
             type = type.substr(start, end - start + 1);
         }
 
-        // Проверка за празен вход
+        
         if (type.empty()) {
             std::cout << "Material type cannot be empty! Please try again.\n";
             continue;
         }
 
-        // Проверка за минимална дължина
+		// Minimum length check
         if (type.length() < 3) {
             std::cout << "Material type must be at least 3 characters long! Please try again.\n";
             continue;
         }
 
-        // Проверка дали всички символи са букви
+		// All letters check
         bool allLetters = true;
         for (char c : type) {
             if (!std::isalpha(static_cast<unsigned char>(c))) {
@@ -546,15 +540,15 @@ void OpticalSystem::addMaterialToSupplier() {
             continue;
         }
 
-        break; // Успешна валидация
+		break; // Successful validation
     }
 
-    // Валидация на дебелина (положително число)
+	// Thickness validation (positive number)
     double thickness = 0.0;
     while (true) {
         try {
             thickness = InputHelper::getValidatedDouble("Enter thickness (mm): ");
-            // Проверяваме тук, за да дадем по-добро съобщение за грешка
+            
             if (thickness <= 0) {
                 std::cout << "Thickness must be a positive number! Please try again.\n";
                 continue;
@@ -567,7 +561,7 @@ void OpticalSystem::addMaterialToSupplier() {
         }
     }
 
-    // Валидация на диоптър
+	// Diopter validation (any double)
     double diopter = 0.0;
     while (true) {
         try {
@@ -580,12 +574,12 @@ void OpticalSystem::addMaterialToSupplier() {
         }
     }
 
-    // Валидация на име на материал
+	// Material name validation 
     std::string materialName;
     while (true) {
         materialName = InputHelper::getStringInput("Enter material name: ");
 
-        // Премахваме водещи и завършващи интервали
+		// Removing leading and trailing spaces
         size_t start = materialName.find_first_not_of(" \t\n\r");
         size_t end = materialName.find_last_not_of(" \t\n\r");
 
@@ -593,19 +587,19 @@ void OpticalSystem::addMaterialToSupplier() {
             materialName = materialName.substr(start, end - start + 1);
         }
 
-        // Проверка за празен вход
+        
         if (materialName.empty()) {
             std::cout << "Material name cannot be empty! Please try again.\n";
             continue;
         }
 
-        // Проверка за минимална дължина
+		// Minimum length check
         if (materialName.length() < 3) {
             std::cout << "Material name must be at least 3 characters long! Please try again.\n";
             continue;
         }
 
-        // Проверка дали всички символи са букви
+		// All letters check
         bool allLetters = true;
         for (char c : materialName) {
             if (!std::isalpha(static_cast<unsigned char>(c))) {
@@ -619,15 +613,15 @@ void OpticalSystem::addMaterialToSupplier() {
             continue;
         }
 
-        break; // Успешна валидация
+		break; // Successful validation
     }
 
-    // Валидация на цена (положително число)
+	// Price validation (positive number)
     double price = 0.0;
     while (true) {
         try {
             price = InputHelper::getValidatedDouble("Enter price: ");
-            // Проверяваме тук, за да дадем по-добро съобщение за грешка
+
             if (price <= 0) {
                 std::cout << "Price must be a positive number! Please try again.\n";
                 continue;
@@ -641,7 +635,7 @@ void OpticalSystem::addMaterialToSupplier() {
     }
 
     try {
-        // Създаваме материала - конструкторът ще направи финална валидация
+		// Material creation - the constructor will do final validation
         OpticalMaterial newMaterial(type, thickness, diopter, materialName, price);
         suppliers[supplierIndex].addMaterial(newMaterial);
 
