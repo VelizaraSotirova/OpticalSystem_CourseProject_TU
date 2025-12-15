@@ -167,8 +167,15 @@ bool Supplier::saveToText(std::ostream& out) const {
     }
 }
 
+
 bool Supplier::loadFromText(std::istream& in) {
     try {
+        std::string marker;
+        if (!std::getline(in, marker)) return false;
+
+        if (marker != "=== SUPPLIER ===")
+            return false;
+
         std::getline(in, bulstat);
         std::getline(in, name);
         std::getline(in, city);
@@ -176,7 +183,7 @@ bool Supplier::loadFromText(std::istream& in) {
 
         size_t count;
         in >> count;
-        in.ignore();
+        in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         materials.clear();
         for (size_t i = 0; i < count; i++) {
@@ -185,17 +192,13 @@ bool Supplier::loadFromText(std::istream& in) {
             materials.push_back(material);
         }
 
-        if (!isValid()) {
-            materials.clear();
-            return false;
-        }
-
-        return in.good();
+        return isValid();
     }
     catch (...) {
         return false;
     }
 }
+
 
 bool Supplier::isValid() const {
     if (!isValidBulstat(bulstat)) return false;
