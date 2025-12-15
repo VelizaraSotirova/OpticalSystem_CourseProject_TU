@@ -605,6 +605,20 @@ void OpticalSystem::addMaterialToSupplier() {
             continue;
         }
 
+        // Проверка дали всички символи са букви
+        bool allLetters = true;
+        for (char c : materialName) {
+            if (!std::isalpha(static_cast<unsigned char>(c))) {
+                allLetters = false;
+                break;
+            }
+        }
+
+        if (!allLetters) {
+            std::cout << "Material name can only contain letters! Please try again.\n";
+            continue;
+        }
+
         break; // Успешна валидация
     }
 

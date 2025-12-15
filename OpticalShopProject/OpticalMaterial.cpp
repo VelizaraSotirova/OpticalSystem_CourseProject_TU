@@ -9,7 +9,7 @@ OpticalMaterial::OpticalMaterial()
 OpticalMaterial::OpticalMaterial(std::string t, double th, double d, std::string m, double p)
     : type(t), thickness(th), diopter(d), materialName(m), price(p) {
     if (thickness <= 0) throw std::invalid_argument("Thickness must be positive");
-    if (price < 0) throw std::invalid_argument("Price cannot be negative");
+    if (price <= 0) throw std::invalid_argument("Price must be positive");
 }
 
 std::string OpticalMaterial::getType() const { return type; }
@@ -26,12 +26,12 @@ void OpticalMaterial::setThickness(double th) {
 void OpticalMaterial::setDiopter(double d) { diopter = d; }
 void OpticalMaterial::setMaterialName(std::string m) { materialName = m; }
 void OpticalMaterial::setPrice(double p) {
-    if (p < 0) throw std::invalid_argument("Price cannot be negative");
+    if (p <= 0) throw std::invalid_argument("Price must be positive");
     price = p;
 }
 
 bool OpticalMaterial::isValid() const {
-    return (thickness > 0 && price >= 0 && !materialName.empty());
+    return (thickness > 0 && price > 0 && !materialName.empty());
 }
 
 bool OpticalMaterial::saveToBinary(std::ostream& out) const {
